@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "soundName": "Cow",
+    "fileName": "Rinder_muh.mp3",
+    "url": "/assets/Rinder_muh.mp3"
+  },
+  {
+    "id": 2,
+    "soundName": "Pig",
+    "fileName": "schwein.mp3",
+    "url": "/assets/schwein.mp3"
+  },
+  {
+    "id": 3,
+    "soundName": "Tiger",
+    "fileName": "Tiger.mp3",
+    "url": "/assets/Tiger.mp3"
+  },
+  {
+    "id": 4,
+    "soundName": "Elephant",
+    "fileName": "Elefant.mp3",
+    "url": "/assets/Elefant.mp3"
+  }
+]
