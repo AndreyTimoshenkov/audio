@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { BehaviorSubject, Observable } from "rxjs";
-import { IAudioFile } from "./model/audio.model";
-import { FakeApiService } from "./services/fake-api.service";
+import { BehaviorSubject } from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -9,18 +7,15 @@ import { FakeApiService } from "./services/fake-api.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'audioPlayer';
-
-  displayedColumns: string[] = ['id', 'soundName', 'fileName'];
-  dataSource: Observable<IAudioFile[]> = this.api.getAudioFiles();
-
+  currentAudioUrl$ = new BehaviorSubject<string | null>(null);
   isPlayerVisible$ = new BehaviorSubject(false);
-  currentAudioUrl$ = new BehaviorSubject<string>('');
 
-  constructor( private readonly api: FakeApiService ) {}
-
-  showPlayer(url: string) {
-    this.isPlayerVisible$.next(true);
+  onTableRowClick(url: string): void {
     this.currentAudioUrl$.next(url);
+    this.isPlayerVisible$.next(true);
+  }
+
+  closePlayer() {
+    this.isPlayerVisible$.next(false);
   }
 }
